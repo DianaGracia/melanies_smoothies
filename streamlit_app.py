@@ -37,8 +37,8 @@ ingredient_list = st.multiselect(
 #ingredient_string = ''
 
 if ingredient_list:
-#    st.write(ingredient_list)
-#    st.text(ingredient_list)
+    #    st.write(ingredient_list)
+    #    st.text(ingredient_list)
 
     ingredient_string = ''
 
