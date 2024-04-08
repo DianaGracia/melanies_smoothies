@@ -50,11 +50,6 @@ if ingredient_list:
         # st.text(fruityvice_response.json())
 
         fv_df= st.dataframe(data=fruityvice_response.json(), use_container_width=True)
-        
-        
-
-        
-        
 
     st.write(ingredient_string)
 
