@@ -3,6 +3,7 @@ import streamlit as st
 # from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 import requests
+import Pandas
 
 # Write directly to the app
 st.title(":cup_with_straw: Customize your Smoothie :cup_with_straw:")
@@ -34,7 +35,7 @@ ingredient_list = st.multiselect(
     my_dataframe, 
     max_selections=5
 )
-ingredient_string = ''
+#ingredient_string = ''
 
 if ingredient_list:
 #    st.write(ingredient_list)
@@ -49,7 +50,7 @@ if ingredient_list:
         st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
 
         st.subheader(fruit_chosen + ' Nutrition info')
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_chosen)
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+search_on)
         # st.text(fruityvice_response.json())
 
         fv_df= st.dataframe(data=fruityvice_response.json(), use_container_width=True)
